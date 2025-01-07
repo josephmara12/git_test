@@ -1,0 +1,8 @@
+oo = oo[oo.NOC == 'USA']
+
+o1 = oo[['Edition','Athlete',]]
+o1['ones'] = 1
+o2 = o1.groupby(['Edition','Athlete'],as_index = False).sum('ones')
+# o3 = o2.groupby(['Edition'], as_index = False).max('ones')
+o2['max'] = o2.groupby('Edition')['ones'].transform('max')
+o2.loc[o2['ones'] == o2['max']]
